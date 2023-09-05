@@ -23,7 +23,7 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], input[type="text"] {
     margin-right: 5px;
 }
 
