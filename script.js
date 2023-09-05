@@ -13,17 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let result = "";
 
-        selectedCompanies.forEach(company => {
-            selectedCommunication.forEach(communication => {
-                if (isCompilation) {
-                    let compilationMessage = "Compilação e atualização do projeto";
-                    const projects = description.split(',').map(project => project.trim());
-                    if (projects.length > 1) {
-                        compilationMessage += "s";
-                    }
-                    compilationMessage += ": " + projects.join(", ") + ".";
-                    result += compilationMessage;
-                } else {
+        if (isCompilation) {
+            const projects = description.split(',').map(project => project.trim());
+            let compilationMessage = "Compilação";
+            if (projects.length > 1) {
+                compilationMessage += " e atualização de projetos: " + projects.join(", ") + ".";
+            } else {
+                compilationMessage += ` e atualização do projeto: ${description}.`;
+            }
+            result += compilationMessage;
+        } else {
+            selectedCompanies.forEach(company => {
+                selectedCommunication.forEach(communication => {
                     if ((company === "Lontano" || company === "Copas") && communication !== "E-mail" && communication !== "WhatsApp") {
                         const match = description.match(/^#(\d{5})/);
                         const ticket = match ? `#${match[1]}` : "";
@@ -41,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             result += `Atendimento a usuário(a): ${user} com chamado no grupo do WhatsApp sobre: ${description}\n`;
                         }
                     }
-                }
+                });
             });
-        });
+        }
 
         resultDiv.textContent = result;
     });
