@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedCompanies = Array.from(document.querySelectorAll('input[name="company"]:checked')).map(checkbox => checkbox.value);
         const selectedCommunication = Array.from(document.querySelectorAll('input[name="communication"]:checked')).map(checkbox => checkbox.value);
-        const isCompilation = document.getElementById("compilation").checked;
+        const isCompilation = selectedCommunication.includes("Compilation");
         const user = document.getElementById("user").value;
         const description = document.getElementById("description").value;
 
@@ -47,5 +47,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         resultDiv.textContent = result;
+    });
+    
+    // Desmarca outros checkboxes de empresa quando um é selecionado
+    const companyCheckboxes = document.querySelectorAll('input[name="company"]');
+    companyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("click", function () {
+            if (checkbox.checked) {
+                companyCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
+    });
+    
+    // Desmarca outros checkboxes de comunicação quando um é selecionado
+    const communicationCheckboxes = document.querySelectorAll('input[name="communication"]');
+    communicationCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("click", function () {
+            if (checkbox.checked) {
+                communicationCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
     });
 });

@@ -25,6 +25,7 @@ label {
 
 input[type="checkbox"], input[type="text"] {
     margin-right: 5px;
+    
 }
 
 button {
@@ -37,4 +38,9 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#input-user {
+    /* Suas regras de estilo aqui */
+    padding-left: 100px;
 }
