@@ -44,3 +44,35 @@ button:hover {
     /* Suas regras de estilo aqui */
     padding-left: 100px;
 }
+/*/* Estilo para o cabeçalho */
+header {
+    background-color: #3949DB; /* Cor de fundo */
+    color: #E4E8ED; /* Cor do texto */
+    padding: 10px 0;
+}
+
+/* Estilo para a barra de navegação (navbar) */
+.navbar {
+    text-align: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo para os itens do menu */
+.nav-item {
+    list-style: none;
+    display: inline-block; /* Itens lado a lado */
+    margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+.nav-item a {
+    padding: 10px 20px;
+    background-color: #3949DB; /* Cor de fundo */
+    color: #E4E8ED; /* Cor do texto */
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s; /* Transições suaves */
+}
+
+/* Efeito de crescimento ao passar o mouse */
+.nav-item a:hover {
+    background-color: #2734A6; /* Cor de fundo alterada */
+    transform: scale(1.1); /* Aumenta em 10% ao passar o mouse */
+}
