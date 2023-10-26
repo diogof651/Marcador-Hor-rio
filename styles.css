@@ -21,6 +21,7 @@ legend {
 label {
     display: block;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 input[type="checkbox"], input[type="text"] {
@@ -40,9 +41,24 @@ button:hover {
     background-color: #0056b3;
 }
 
-#input-user {
+/* #input-user {
     /* Suas regras de estilo aqui */
-    padding-left: 100px;
+    /* padding-left: 100px; */
+/* } */
+#select {
+    width: 20%; /* Largura do combobox */
+    padding: 5px;
+}
+
+#description {
+    width: 80%; /* Largura do input description (80% do espaço restante) */
+    padding: 5px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 /*/* Estilo para o cabeçalho */
 header {
