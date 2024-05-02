@@ -35,17 +35,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         const match = description.match(/^#(\d{5})/);
                         const ticket = match ? `#${match[1]}` : "";
 
-                        const descriptionWithoutPrefix = description.split('-')[1].trim();
+                        const descriptionWithoutPrefix = description.substring(9);
 
-                        result += `Atendimento a usuário(a): ${user2} com chamado no ${communication} ${ticket ? ticket + ' ' : ''}sobre: ${descriptionWithoutPrefix}\n`;
+                        result += `Atendimento a usuário(a): ${user2} com chamado no ${communication} ${ticket ? ticket + ' ' : ''}sobre: ${descriptionWithoutPrefix}.\n`;
                     } else if (company === "Lontano" || company === "Copas") {
                         const descriptionWithoutPrefix = description.split('-')[1].trim();
-                        result += `Atendimento a usuário(a): ${user2} com chamado no ${communication} sobre: ${descriptionWithoutPrefix}\n`;
+                        result += `Atendimento a usuário(a): ${user2} com chamado no ${communication} sobre: ${descriptionWithoutPrefix}.\n`;
                     } else if (company === "Rodomaior" || company === "Mademaior") {
                         if (communication === "E-mail") {
-                            result += `Atendimento a usuário(a): ${user2} com e-mail encaminhado a GS sobre: ${description}\n`;
+                            result += `Atendimento a usuário(a): ${user2} com e-mail encaminhado a GS sobre: ${description}.\n`;
                         } else {
-                            result += `Atendimento a usuário(a): ${user2} com chamado no grupo do WhatsApp sobre: ${description}\n`;
+                            result += `Atendimento a usuário(a): ${user2} com chamado no grupo do WhatsApp sobre: ${description}.\n`;
                         }
                     }
                 });

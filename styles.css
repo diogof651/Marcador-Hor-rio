@@ -92,3 +92,22 @@ header {
     background-color: #2734A6; /* Cor de fundo alterada */
     transform: scale(1.1); /* Aumenta em 10% ao passar o mouse */
 }
+footer {
+    background-color: #1e40b9;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    height: 50px; /* Altura desejada do footer */
+    line-height: 50px; /* Igual à altura do footer para centralizar verticalmente */
+  }
+  footer::selection {
+    background-color: #f5ac46; /* Cor de seleção preta */
+    color: #080404; /* Cor do texto selecionado */
+  }
+  
+  footer::-moz-selection {
+    background-color: #000000; /* Cor de seleção preta */
+    color: #fff; /* Cor do texto selecionado */
+  }
+  
+ 
